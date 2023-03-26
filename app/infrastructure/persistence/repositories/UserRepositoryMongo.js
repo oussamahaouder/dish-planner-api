@@ -17,7 +17,7 @@ class UserRepository {
     const user = await db.collection('users').findOne({ username });
     return user ? new User(user) : null;
   }
-
+//create user
   async create(userData) {
     const result = await db.collection('users').insertOne(userData);
     return this.findById(result.insertedId);
