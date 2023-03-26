@@ -7,6 +7,7 @@ class UserRepository {
     constructor(db) {
     this.db = db;
   }
+  //Find User By id 
   async findById(id) {
     const user = await db.collection('users').findOne({ _id: ObjectId(id) });
     return user ? new User(user) : null;
