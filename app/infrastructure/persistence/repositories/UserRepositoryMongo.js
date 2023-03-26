@@ -12,7 +12,7 @@ class UserRepository {
     const user = await db.collection('users').findOne({ _id: ObjectId(id) });
     return user ? new User(user) : null;
   }
-
+//find user by username
   async findByUsername(username) {
     const user = await db.collection('users').findOne({ username });
     return user ? new User(user) : null;
